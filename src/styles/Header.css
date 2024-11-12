@@ -1,0 +1,24 @@
+.header {
+    background-image: url('../Assets/Images/headerBackground.jpeg');
+    background-size: cover;
+    padding: 100px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.header-text {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    display: inline-block;
+    text-align: center;
+}
+
+.header button {
+    background-color: #F6C8D8;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+
