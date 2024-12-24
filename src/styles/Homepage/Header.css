@@ -1,0 +1,86 @@
+/* Import Playfair Display font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap'); /* Optional: Add a second font, like Open Sans */
+
+/* Header Section */
+.header {
+    background-image: url('../../Assets/Images/headerBackground.jpeg');
+    background-size: cover;
+    padding: 100px 0;
+    text-align: center;
+    color: #fff;
+    font-family: 'Playfair Display', Georgia, serif; /* Apply the Playfair Display font */
+}
+
+.header-text {
+    background: rgba(255, 255, 255, 0.9); /* Translucent background */
+    padding: 40px; /* Space inside the div */
+    display: inline-block;
+    text-align: center;
+    border-radius: 10px; /* Optional rounded corners */
+    width: 20%; /* Optional: Adjust the width */
+    max-width: 800px; /* Limit the max width for responsiveness */
+    height: 300px; /* Set a fixed height */
+    overflow: auto; /* Ensures content scrolls if it exceeds the height */
+    font-family: 'Playfair Display', Georgia, serif; /* Apply the Playfair Display font */
+    margin-bottom: 20px; /* Add margin at the bottom for spacing */
+}
+
+/* Individual Styling for h1 Element with the provided styles */
+
+/* h1 Element */
+.header-text h1 {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-font-smoothing: antialiased;
+    text-shadow: none;
+    text-align: center;
+    box-sizing: inherit;
+    letter-spacing: normal;
+    text-transform: none;
+    max-width: 100%;
+    display: inline-block;
+    font-family: 'Playfair Display', Georgia, serif; /* Apply Playfair Display font */
+    overflow-wrap: break-word;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: 400;
+    color: rgb(166, 98, 122); /* Apply custom color */
+    line-height: 1.2;
+    font-size: 40px !important; /* Ensure the font size is applied with importance */
+}
+
+/* h2 Element */
+.header-text h2 {
+    font-size: 25px; /* Adjust the font size of h2 */
+    font-family: 'Open Sans', sans-serif; /* Font for h2 (can be changed as needed) */
+}
+
+/* p Element */
+.header-text p {
+    font-size: 19px; /* Adjust the font size of p */
+    font-family: 'Open Sans', sans-serif; /* Font for p (can be changed as needed) */
+    margin-bottom: 30px; /* Space below h2 */
+}
+
+/* Header button */
+.header button {
+    background-color: #F6C8D8; /* Soft pink background */
+    color: #000; /* Change text color to black */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 50px; /* Make the button round */
+    font-size: 16px; /* Optional: adjust the font size */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+    font-family: sans-serif; /* Override and use the default sans-serif font for the button */
+}
+
+/* Add hover effect */
+.header button:hover {
+    background-color: #f0a8b7; /* Change background color on hover */
+    transform: scale(1.1); /* Slightly enlarge the button */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+    color: #000; /* Ensure text stays black */
+}
