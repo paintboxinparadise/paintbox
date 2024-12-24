@@ -18,7 +18,7 @@ const App = () => {
         <Router basename="/paintbox">
             <Layout>
                 <Routes>
-                    <Route path="/home" element={<Home />} />
+                    <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/fall" element={<Fall />} />
                     <Route path="/winter" element={<Winter />} />

@@ -61,29 +61,29 @@ const Navbar = () => {
                 >
                     {/* Navigation links remain the same */}
                     {[
-                        'HOME',
-                        'ABOUT',
-                        'FALL',
-                        'WINTER',
-                        'SPRING',
-                        'SUMMER',
-                        'NATURE',
-                        'ANIMALS',
-                        'GLASSWARE',
-                        'KIDS',
-                        'MISC',
+                        { name: 'HOME', path: '/' },
+                        { name: 'ABOUT', path: '/about' },
+                        { name: 'FALL', path: '/fall' },
+                        { name: 'WINTER', path: '/winter' },
+                        { name: 'SPRING', path: '/spring' },
+                        { name: 'SUMMER', path: '/summer' },
+                        { name: 'NATURE', path: '/nature' },
+                        { name: 'ANIMALS', path: '/animals' },
+                        { name: 'GLASSWARE', path: '/glassware' },
+                        { name: 'KIDS', path: '/kids' },
+                        { name: 'MISC', path: '/misc' },
                     ].map((link, index) => (
                         <Link
                             key={index}
-                            to={`/${link.toLowerCase()}`}
+                            to={link.path}
                             className={`${
-                                location.pathname === `/${link.toLowerCase()}`
+                                location.pathname === link.path
                                     ? 'text-pink-500 font-bold'
                                     : 'text-black hover:text-pink-300'
                             } transition py-2`}
                             onClick={() => setIsOpen(false)}
                         >
-                            {link}
+                            {link.name}
                         </Link>
                     ))}
                 </div>
