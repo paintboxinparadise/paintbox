@@ -13,9 +13,10 @@ const AboutSection = () => {
                             About Us
                         </h2>
                         <p className="text-gray-600 mb-6 leading-relaxed">
-                            We are dedicated to providing exceptional services and solutions.
-                            With years of experience, we ensure quality and customer satisfaction
-                            in everything we do.
+                            <b>All the fun brought to you!</b>  Paintbox in Paradise is a mobile paint party company that provides a fun
+                            and creative way to entertain in the comforts of your own place.  <b>Great for birthdays, office parties,
+                            holiday events, kids events, girls night out, team building, or just for fun!</b>  Serving mostly Orange
+                            County and Riverside communities.
                         </p>
                         <a
                             href="#services"

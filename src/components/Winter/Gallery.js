@@ -13,7 +13,7 @@ const Gallery = () => {
             name: key.replace('./', ''),
         }));
     } catch (error) {
-        console.error(`Error loading images from folder: Fall`, error);
+        console.error(`Error loading images from folder: Winter`, error);
     }
 
     const openImage = (image) => setSelectedImage(image);
@@ -30,7 +30,7 @@ const Gallery = () => {
                     ))}
                 </div>
             ) : (
-                <p>No images found for the folder "Fall".</p>
+                <p>No images found for the folder "Winter".</p>
             )}
 
             {selectedImage && (

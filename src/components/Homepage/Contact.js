@@ -98,7 +98,7 @@ const Contact = () => {
                             <strong>Phone:</strong> +1 (714) 393-2501
                         </p>
                         <p className="text-gray-600">
-                            Feel free to reach out for any inquiries or support. We're here to help!
+                            Are you planning a special event?  Send me a message about your plans, and I will get back to you soon!
                         </p>
                     </div>
                 </div>

@@ -31,7 +31,7 @@ const Connect = () => {
                 </div>
 
                 <p className="text-gray-500 mt-6 text-sm">
-                    &copy; 2024 YourBrand. All rights reserved.
+                    &copy; 2018 Paintbox in Paradise. All rights reserved.
                 </p>
             </div>
         </footer>
