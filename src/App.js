@@ -15,7 +15,7 @@ import MISC from './Pages/Misc';
 
 const App = () => {
     return (
-        <Router basename="/paintbox">
+        <Router basename="/">
             <Layout>
                 <Routes>
                     <Route path="/" element={<Home />} />
