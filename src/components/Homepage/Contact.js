@@ -15,10 +15,10 @@ const Contact = () => {
 
         emailjs
             .send(
-                'service_5g9asud', // Replace with your EmailJS Service ID
-                'test_template123', // Replace with your EmailJS Template ID
+                'service_fshoo7s', // Replace with your EmailJS Service ID
+                'template_f0cgnel', // Replace with your EmailJS Template ID
                 formData,
-                'tQpdfsjlnZaUmdxwC' // Replace with your EmailJS User ID
+                'ZrVsbk3QuK5iOmXFD' // Replace with your EmailJS User ID
             )
             .then(() => {
                 setIsModalOpen(true);
@@ -109,7 +109,7 @@ const Contact = () => {
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
                     <div className="bg-white p-6 rounded-lg shadow-lg text-center">
                         <h3 className="text-xl font-bold text-gray-800 mb-4">Thank You!</h3>
-                        <p className="text-gray-600 mb-4">We will be in contact with you shortly.</p>
+                        <p className="text-gray-600 mb-4">We will be in touch with you shortly. For a faster response, please don’t hesitate to reach out to us at +1 (714) 393-2501.</p>
                         <button
                             onClick={() => setIsModalOpen(false)}
                             className="bg-pink-500 hover:bg-pink-400 text-white font-medium py-2 px-4 rounded-full shadow-md transition"
