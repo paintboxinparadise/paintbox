@@ -8,7 +8,7 @@ const Summer = () => {
             <AnimatedTitle title="Summer Collection" emoji="☀️" animationClass="text-yellow-500" />
             <Gallery category="Summer" />
             <AnimatedTitle title="Fourth of July Gallery" emoji="🎉" animationClass="text-red-500" />
-            <Gallery category="Fourth" />
+            <Gallery category="FourthOfJuly" />
         </div>
     );
 };

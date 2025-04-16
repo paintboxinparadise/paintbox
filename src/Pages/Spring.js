@@ -8,7 +8,7 @@ const Spring = () => {
             <AnimatedTitle title="Spring Collection" emoji="🌸" animationClass="text-pink-500" />
             <Gallery category="Spring" />
             <AnimatedTitle title="St. Patrick's Day Gallery" emoji="☘️" animationClass="text-green-500" />
-            <Gallery category="Patricks" />
+            <Gallery category="StPattys" />
         </div>
     );
 };

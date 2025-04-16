@@ -10,7 +10,7 @@ const Winter = () => {
             <AnimatedTitle title="Winter Collection" emoji="❄️" animationClass="text-blue-500" />
             <Gallery category="Winter" />
             <AnimatedTitle title="New Years Collection" emoji="🥂" animationClass="text-yellow-500" />
-            <Gallery category="New_Years" />
+            <Gallery category="NewYears" />
             <AnimatedTitle title="Valentines Collection" emoji="💘" animationClass="text-red-500" />
             <Gallery category="Valentines" />
         </div>

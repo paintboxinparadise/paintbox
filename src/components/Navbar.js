@@ -1,7 +1,7 @@
 // src/components/Homepage/Navbar.js
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import logo from '../Assets/Images/logo.png'; // Ensure this is a high-quality image, preferably SVG
+import logo from '../Assets/Images/logo.png';
 import { motion } from 'framer-motion';
 
 const Navbar = () => {
