@@ -16,7 +16,7 @@ Make sure all images follow these guidelines:
 
 ## ✅ Step 2: Upload Images to the Correct Folder
 
-1. **Navigate** to your images GitHub repository: [paintbox](https://github.com/paintboxinparadise/paintbox/src/assets/images)
+1. **Navigate** to your images GitHub repository: [paintbox](https://github.com/paintboxinparadise/paintbox/tree/master/src/Assets/Images)
    ```
    src/Assets/Images/<CategoryName>
    ```
