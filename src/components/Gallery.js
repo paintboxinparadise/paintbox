@@ -3,11 +3,14 @@ import React, { useEffect, useState } from 'react';
 const Gallery = ({ category }) => {
     const [images, setImages] = useState([]);
     const [selectedImage, setSelectedImage] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const username = 'paintboxinparadise';
         const repo = 'paintbox';
         const branch = 'master';
+
+        setLoading(true);
 
         fetch(`https://api.github.com/repos/${username}/${repo}/contents/src/Assets/Images/${category}?ref=${branch}`)
             .then(res => res.json())
@@ -18,11 +21,16 @@ const Gallery = ({ category }) => {
                         .map(file => file.download_url);
                     setImages(imageUrls);
                 } else {
-                    console.warn(`Category "${category}" not found or empty.`);
+                    console.warn(`Category \"${category}\" not found or empty.`);
                     setImages([]);
                 }
+                setLoading(false);
             })
-            .catch(err => console.error('Error loading images:', err));
+            .catch(err => {
+                console.error('Error loading images:', err);
+                setImages([]);
+                setLoading(false);
+            });
     }, [category]);
 
     const openImage = (url) => setSelectedImage(url);
@@ -30,7 +38,11 @@ const Gallery = ({ category }) => {
 
     return (
         <div className="gallery-container">
-            {images.length > 0 ? (
+            {loading ? (
+                <div className="spinner-container">
+                    <div className="spinner" />
+                </div>
+            ) : images.length > 0 ? (
                 <div className="gallery-grid">
                     {images.map((url, index) => (
                         <div key={index} className="gallery-item" onClick={() => openImage(url)}>
@@ -146,6 +158,27 @@ const Gallery = ({ category }) => {
 
                 .close-button:hover {
                     background: #c0392b;
+                }
+
+                .spinner-container {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 300px;
+                }
+
+                .spinner {
+                    border: 8px solid #f3f3f3;
+                    border-top: 8px solid #3498db;
+                    border-radius: 50%;
+                    width: 60px;
+                    height: 60px;
+                    animation: spin 1s linear infinite;
+                }
+
+                @keyframes spin {
+                    0% { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
                 }
 
                 @keyframes fadeIn {

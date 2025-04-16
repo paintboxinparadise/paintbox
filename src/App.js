@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './Pages/Homepage';
 import About from './Pages/About';
@@ -15,7 +15,7 @@ import MISC from './Pages/Misc';
 
 const App = () => {
     return (
-        <Router basename="/">
+        <Router>
             <Layout>
                 <Routes>
                     <Route path="/" element={<Home />} />
