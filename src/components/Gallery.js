@@ -1,42 +1,51 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-const Gallery = () => {
+const Gallery = ({ category }) => {
+    const [images, setImages] = useState([]);
     const [selectedImage, setSelectedImage] = useState(null);
 
-    let images = [];
-    try {
-        // Dynamically import images from the given folder
-        const imagesContext = require.context('../../Assets/Images/Spring', false, /\.(jpg|jpeg|png|gif)$/);
+    useEffect(() => {
+        const username = 'tensign1444';
+        const repo = 'paintbox';
+        const branch = 'master';
 
-        images = imagesContext.keys().map((key) => ({
-            src: imagesContext(key),
-            name: key.replace('./', ''),
-        }));
-    } catch (error) {
-        console.error(`Error loading images from folder: Fall`, error);
-    }
+        fetch(`https://api.github.com/repos/${username}/${repo}/contents/src/Assets/Images/${category}?ref=${branch}`)
+            .then(res => res.json())
+            .then(data => {
+                if (Array.isArray(data)) {
+                    const imageUrls = data
+                        .filter(file => /\.(jpg|jpeg|png|gif|webp)$/i.test(file.name))
+                        .map(file => file.download_url);
+                    setImages(imageUrls);
+                } else {
+                    console.warn(`Category "${category}" not found or empty.`);
+                    setImages([]);
+                }
+            })
+            .catch(err => console.error('Error loading images:', err));
+    }, [category]);
 
-    const openImage = (image) => setSelectedImage(image);
+    const openImage = (url) => setSelectedImage(url);
     const closeImage = () => setSelectedImage(null);
 
     return (
         <div className="gallery-container">
             {images.length > 0 ? (
                 <div className="gallery-grid">
-                    {images.map((image, index) => (
-                        <div key={index} className="gallery-item" onClick={() => openImage(image)}>
-                            <img src={image.src} className="gallery-thumbnail"/>
+                    {images.map((url, index) => (
+                        <div key={index} className="gallery-item" onClick={() => openImage(url)}>
+                            <img src={url} className="gallery-thumbnail" alt={`${category} ${index + 1}`} />
                         </div>
                     ))}
                 </div>
             ) : (
-                <p>No images found for the folder "Fall".</p>
+                <p>No images found for the category "{category}".</p>
             )}
 
             {selectedImage && (
                 <div className="modal" onClick={closeImage}>
                     <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                        <img src={selectedImage.src} className="modal-image"/>
+                        <img src={selectedImage} className="modal-image" />
                         <button className="close-button" onClick={closeImage}>&times;</button>
                     </div>
                 </div>
@@ -83,25 +92,6 @@ const Gallery = () => {
                     transform: scale(1.1);
                 }
 
-                .gallery-caption {
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-                    padding: 10px;
-                    background: rgba(0, 0, 0, 0.6);
-                    color: #fff;
-                    text-align: center;
-                    font-size: 16px;
-                    font-weight: 500;
-                    opacity: 0;
-                    transition: opacity 0.3s ease;
-                }
-
-                .gallery-item:hover .gallery-caption {
-                    opacity: 1;
-                }
-
                 .modal {
                     position: fixed;
                     top: 0;
@@ -128,19 +118,11 @@ const Gallery = () => {
 
                 .modal-image {
                     width: auto;
-                    max-width: 100%; /* Ensures the image doesn't exceed the modal's width */
-                    max-height: 80vh; /* Limits the image's height to 80% of the viewport height */
+                    max-width: 100%;
+                    max-height: 80vh;
                     display: block;
                     margin: 0 auto;
-                    object-fit: contain; /* Ensures the image scales nicely without distortion */
-                }
-
-                .modal-caption {
-                    font-size: 20px;
-                    font-weight: 600;
-                    color: #333;
-                    text-align: center;
-                    margin-bottom: 10px;
+                    object-fit: contain;
                 }
 
                 .close-button {
@@ -167,12 +149,8 @@ const Gallery = () => {
                 }
 
                 @keyframes fadeIn {
-                    from {
-                        opacity: 0;
-                    }
-                    to {
-                        opacity: 1;
-                    }
+                    from { opacity: 0; }
+                    to { opacity: 1; }
                 }
             `}</style>
         </div>

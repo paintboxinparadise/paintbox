@@ -1,0 +1,41 @@
+/* Main Loading Container */
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0; /* Adjust to match your brand background */
+    overflow: hidden;
+}
+
+/* Logo Wrapper */
+.logo-wrapper {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensures the mask stays within the logo bounds */
+}
+
+/* Logo Styling */
+.logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 1;
+    position: relative;
+    clip-path: inset(0 0 100% 0); /* Initially hidden */
+    animation: revealLogo 2.5s ease-in-out forwards;
+}
+
+/* Reveal Animation */
+@keyframes revealLogo {
+    0% {
+        clip-path: inset(0 0 100% 0); /* Fully hidden */
+    }
+    100% {
+        clip-path: inset(0 0 0 0); /* Fully revealed */
+    }
+}

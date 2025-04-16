@@ -1,4 +1,3 @@
-// src/components/Homepage/AboutSection.js
 import React from 'react';
 import AboutImage from '../../Assets/Images/About.jpeg';
 
