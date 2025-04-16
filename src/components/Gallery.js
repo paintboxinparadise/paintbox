@@ -5,7 +5,7 @@ const Gallery = ({ category }) => {
     const [selectedImage, setSelectedImage] = useState(null);
 
     useEffect(() => {
-        const username = 'tensign1444';
+        const username = 'paintboxinparadise';
         const repo = 'paintbox';
         const branch = 'master';
 
