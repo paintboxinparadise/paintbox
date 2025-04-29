@@ -28,8 +28,16 @@ const paintLetterVariants = {
 };
 
 const Header = () => {
-    const title = "Let Me Entertain You!";
-    const colors = ["#FF69B4", "#FFD700", "#1E90FF", "#32CD32", "#FF4500"];
+    const title = 'Let Me Entertain You!';
+    const colors = ['#FF69B4', '#FFD700', '#1E90FF', '#32CD32', '#FF4500'];
+
+    // Function to handle smooth scrolling to the contact section
+    const handleScrollToContact = () => {
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
     return (
         <header
@@ -43,14 +51,14 @@ const Header = () => {
                     initial="hidden"
                     animate="visible"
                 >
-                    {title.split("").map((char, index) => (
+                    {title.split('').map((char, index) => (
                         <motion.span
                             key={index}
                             className="inline-block"
                             style={{ color: colors[index % colors.length] }}
                             variants={paintLetterVariants}
                         >
-                            {char === " " ? "\u00A0" : char}
+                            {char === ' ' ? '\u00A0' : char}
                         </motion.span>
                     ))}
                 </motion.h1>
@@ -62,14 +70,14 @@ const Header = () => {
                 >
                     Let me bring a spark to your entertainment!
                 </motion.p>
-                <motion.a
-                    href="#contact"
+                <motion.button
+                    onClick={handleScrollToContact} // Use onClick to trigger scrolling
                     className="bg-pink-500 hover:bg-pink-400 text-white font-medium py-3 px-6 rounded-full shadow-md transition"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                 >
                     BOOK EVENT
-                </motion.a>
+                </motion.button>
             </div>
         </header>
     );
