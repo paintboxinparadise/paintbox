@@ -1,6 +1,6 @@
 // src/components/About/ProfileSection.js
 import React from 'react';
-import ProfileImage from '../../Assets/Images/ProfileImage.jpg';
+import ProfileImage from '../../Assets/Images/ProfileImage.png';
 
 const ProfileSection = () => {
     return (
